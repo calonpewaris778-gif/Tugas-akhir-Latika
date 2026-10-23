@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SiagaKita: data gempa BMKG diubah menjadi langkah penyelamatan yang spesifik untuk lokasimu.">
+  <meta name="theme-color" content="#1b3a4b">
+  <title>SiagaKita – Peringatan Gempa Personal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="status" class="status" role="status">Memuat data…</div>
+
+  <header class="hero">
+    <h1>SiagaKita</h1>
+    <p class="tagline">Gempa baru saja terjadi. Apa yang harus kamu lakukan di tempatmu sekarang?</p>
+    <svg id="seismo" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true">
+      <polyline id="trace" points="" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="lokasi-h">
+      <h2 id="lokasi-h">Lokasimu</h2>
+      <div class="row">
+        <button id="btn-gps" type="button">Gunakan lokasi saya</button>
+        <label for="kota" class="sr">Atau pilih kota</label>
+        <select id="kota"><option value="">Atau pilih kota…</option></select>
+      </div>
+      <p id="lokasi-info" class="muted">Lokasi belum dipilih. Tanpa lokasi, jarak dan saran tindakan tidak bisa dihitung.</p>
+    </section>
+
+    <section class="card" id="detail" aria-live="polite" aria-labelledby="detail-h">
+      <h2 id="detail-h">Gempa yang dipilih</h2>
+      <div id="detail-isi"></div>
+    </section>
+
+    <section class="card" aria-labelledby="daftar-h">
+      <h2 id="daftar-h">Gempa terkini (M 5.0+)</h2>
+      <p class="muted">Ketuk salah satu gempa untuk melihat saran tindakan.</p>
+      <ul id="daftar" class="daftar"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data: BMKG (data.bmkg.go.id). Tingkat guncangan adalah perkiraan kasar untuk edukasi, bukan data resmi. Ikuti selalu arahan BMKG dan BPBD.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
