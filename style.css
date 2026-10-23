@@ -1,0 +1,40 @@
+:root{
+  --bg:#eef2f3; --ink:#14232b; --muted:#5a6b73; --card:#fff; --line:#d3dde1;
+  --brand:#1b3a4b; --accent:#e4572e;
+  --l1:#2e8b57; --l2:#c9a400; --l3:#e07b00; --l4:#c62828;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.sr{position:absolute;left:-9999px}
+.status{position:sticky;top:0;z-index:5;padding:.4rem 1rem;background:var(--brand);color:#fff;font-size:.9rem;text-align:center}
+.status.offline{background:#7a4b00}
+.hero{background:var(--brand);color:#fff;padding:2rem 1.25rem 0;text-align:left}
+.hero h1{margin:0;font-size:clamp(2rem,6vw,3rem);letter-spacing:-.02em}
+.tagline{max-width:34rem;margin:.25rem 0 1rem;color:#cfe0e8}
+#seismo{display:block;width:calc(100% + 2.5rem);margin:0 -1.25rem;height:80px;color:var(--accent)}
+main{max-width:46rem;margin:0 auto;padding:1.25rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:1rem}
+.card h2{margin:0 0 .6rem;font-size:1.1rem}
+.row{display:flex;gap:.6rem;flex-wrap:wrap}
+button,select{font:inherit;padding:.55rem .9rem;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+button{background:var(--brand);color:#fff;border-color:var(--brand);cursor:pointer}
+button:hover{background:#12303f}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.muted{color:var(--muted);font-size:.92rem;margin:.5rem 0 0}
+.mag{font-size:2.6rem;font-weight:700;line-height:1}
+.head{display:flex;gap:1rem;align-items:center;margin-bottom:.6rem}
+.badge{display:inline-block;padding:.15rem .6rem;border-radius:99px;color:#fff;font-weight:600;font-size:.9rem}
+.lv1{background:var(--l1)} .lv2{background:var(--l2)} .lv3{background:var(--l3)} .lv4{background:var(--l4)}
+.tsunami{border-left:5px solid var(--l4);background:#fdecea;padding:.6rem .9rem;border-radius:6px;margin:.8rem 0;font-weight:600}
+.aman{border-left:5px solid var(--l1);background:#e8f5ee;padding:.6rem .9rem;border-radius:6px;margin:.8rem 0}
+.aksi{padding-left:1.2rem}
+.aksi li{margin:.3rem 0}
+.shake{max-width:100%;border-radius:8px;margin-top:.6rem}
+.daftar{list-style:none;margin:.6rem 0 0;padding:0}
+.daftar button{width:100%;display:flex;gap:.8rem;align-items:center;text-align:left;background:#fff;color:var(--ink);border:1px solid var(--line);margin-bottom:.5rem}
+.daftar button:hover,.daftar button[aria-current="true"]{border-color:var(--accent);background:#fff6f2}
+.daftar .m{font-weight:700;min-width:2.6rem;font-size:1.2rem}
+.daftar small{color:var(--muted);display:block}
+footer{max-width:46rem;margin:0 auto;padding:0 1.25rem 2rem;color:var(--muted);font-size:.85rem}
+@media(prefers-reduced-motion:no-preference){#trace{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 2s ease-out forwards}}
+@keyframes draw{to{stroke-dashoffset:0}}
